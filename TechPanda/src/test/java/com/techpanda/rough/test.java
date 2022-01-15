@@ -36,6 +36,30 @@ public class test {
 		
 		//System.out.println(sortByDrp.getFirstSelectedOption().getText());
 		System.out.println("done");
+		
+	//	********************************************************************************************
+		
+		String price = driver.findElement(By.xpath("//span[contains(text(),'$100.00')]")).getText();//span[contains(text(),'$100.00')]
+		System.out.println(price);
+		driver.findElement(By.xpath("//img[@id='product-collection-image-1']")).click();
+		
+		String priceDetail= driver.findElement(By.xpath("//span[contains(text(),'$100.00')]")).getText();
+		System.out.println(priceDetail);
+	
+		//string1.equals(string2))
+		if (price.equals(priceDetail))
+		{
+			System.out.println("Price of the selected mobile matches in first and details page");
+			System.out.println(price);
+			System.out.println(priceDetail);
+		}
+		else
+		{
+			System.out.println("Price of the selected mobile NOT matches in first and details page");
+			System.out.println(price);
+			System.out.println(priceDetail);
+		}
+		
 		driver.quit();
 		
 	}
